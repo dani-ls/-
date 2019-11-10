@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../10.17swiper/swiper-5.0.4/package/js/swiper.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../10.17swiper/swiper-5.0.4/package/css/swiper.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/artical.css">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <!-- <div class="contain">
+            <div class="crumbs">
+                <span style="color: #333;">首页</span>
+                <span>></span>
+                <span>居家生活</span>
+            </div>
+            <div class="banner">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(../img/ban1.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban2.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban3.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban4.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban5.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban6.webp)"></div>
+                        <div class="swiper-slide" style="background-image:url(../img/ban7.webp)"></div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-white"></div>
+                    <div class="swiper-button-next swiper-button-white next0">
+                        <i></i>
+                    </div>
+                    <div class="swiper-button-prev swiper-button-white prev0">
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+            <div class="goodArea">
+                <div class="sortBar">
+                    <div class="category">
+                        <span class="Sname">分类：</span>
+                        <div class="Group many">
+                            <a href="">全部</a>
+                            <a href="">秋冬好物</a>
+                            <a href="">主题床品</a>
+                            <a href="">北欧原木</a>
+                        </div>
+                    </div>
+                    <div class="area">
+                        <span class="Sname">配送地区：</span>
+                        <div class="Group smal">
+                            <a href="">全部</a>
+                            <a href="">香港</a>
+                            <a href="">澳门</a>
+                            <a href="">台湾</a>
+                        </div>
+                    </div>
+                    <div class="sorts">
+                        <span class="Sname">排序：</span>
+                        <div class="Group">
+                            <a href="">默认</a>
+                            <a href="">
+                                <span>价格</span>
+                                <div class="icon">
+                                    <i class="Sup"></i>
+                                    <i class="Sdown"></i>
+                                </div>
+                            </a>
+                            <a href=""><span>上架时间</span>
+                                <i class="jtou"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="Leve">
+                        <div class="Lhd">
+                            <h2>秋冬好物</h2>
+                            <p class="">秋冬好物</p>
+                        </div>
+                        <div class="Lbd">
+                            <div class="pOne">
+                                <div class="hd" style="border-bottom: 1px solid #F4F0EA;">
+                                    <img src="../img/new1.webp" alt="" class="img" style="width: 180px;height: 180px;">
+                                    <img src="../img/slogo.png" alt="" class="slogo">
+                                    <div class="prom" style="background: url(../img/d03b.png);">
+                                        <div class="promTitle" style="background: url(../img/879ed.png);">
+                                            <div class="nle">
+                                                <div class="uptitle">
+                                                    8折券提前抢
+                                                </div>
+                                                <div class="subtitle">
+                                                    10.29-10.31
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nri">
+                                            <div class="Ncontent">
+                                                开通超会享优惠
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <div class="prdtTags">
+                                        <span class="tagword"></span>
+                                    </div>
+                                    <h4>春风MAX男士增大按摩精华油</h4>
+                                    <p class="nprice">
+                                        <span class="red">￥99</span>
+                                        <span class="gray" style="display: none;"></span>
+                                    </p>
+                                    <div class="detail">
+                                        <hr>
+                                        <p class="pDtl">浅绒如脂臻密，高级莫兰迪色系</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </main>
+    <footer></footer>
+    <div class="slide"></div>
+</body>
+<script>
+    $('header').load('header.html')
+    $('footer').load('footer.html')
+    // $('.slide').load('slide.html')
+
+    // for (i = 0; i < swiper.pagination.bullets.length; i++) {
+    //     swiper.pagination.bullets[i].onmouseover = function () {
+    //         this.click();
+    //     };
+    // }
+    var Uindex = window.location.search.substr(1)
+    $.get("../json/artical.json", function (str) {
+        $(str[Uindex - 1]).each(function (index, item) {
+            $(`
+                <div class="contain">
+                    <div class="crumbs">
+                     <span style="color: #333;">首页</span>
+                    <span>></span>
+                    <span>${item.title}</span>
+                    </div>
+                    <div class="banner">
+                <div class="swiper-container swiper">
+                    <div class="swiper-wrapper">
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-white"></div>
+                    <div class="swiper-button-next swiper-button-white next0">
+                        <i></i>
+                    </div>
+                    <div class="swiper-button-prev swiper-button-white prev0">
+                        <i></i>
+                    </div>
+                    </div>
+                </div>
+                <div class="goodArea">
+                <div class="sortBar">
+                    <div class="category">
+                        <span class="Sname">分类：</span>
+                        <div class="Group many">
+                        </div>
+                    </div>
+                    <div class="area">
+                        <span class="Sname">配送地区：</span>
+                        <div class="Group smal">
+                        </div>
+                    </div>
+                    <div class="sorts">
+                        <span class="Sname">排序：</span>
+                        <div class="Group">
+                            <a href="">默认</a>
+                            <a href="">
+                                <span>价格</span>
+                                <div class="icon">
+                                    <i class="Sup"></i>
+                                    <i class="Sdown"></i>
+                                </div>
+                            </a>
+                            <a href=""><span>上架时间</span>
+                                <i class="jtou"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                   
+                </div>
+             </div>
+             </div>
+            `).appendTo($("main"))
+            var Uimg = item.img
+            $.each(Uimg, function (i) {
+                $(`
+                <div class="swiper-slide" style="background-image:url(${Uimg[i]})"></div>
+                `).appendTo($(".swiper-wrapper"))
+            })
+
+            var Ulist = item.list
+            $.each(Ulist, function (i) {
+                $(`
+                <a href="">${Ulist[i]}</a>
+                `).appendTo($(".many"))
+            })
+            var Ulis = item.lis
+            $.each(Ulis, function (i) {
+                $(`
+                <a href="">${Ulis[i]}</a>
+                `).appendTo($(".smal"))
+            })
+            var Uitem = item.item
+            // $(".Lhd").each(function (i) {
+            $(Uitem).each(function (index, item1) {
+                $(`
+                <div class="Leve">
+                        <div class="Lhd">
+                        <h2>${item1.head}</h2>
+                         <p class="">${item1.head1}</p>
+                        </div>
+                     <ul class="Lbd">
+                     </ul>
+                      
+                    </div>
+               
+                `).appendTo($(".content"))
+            })
+            // })
+            $(".Lbd").each(function (i) {
+                $(Uitem[i].li).each(function (index, item2) {
+                    $(`
+                     <div class="pOne">
+                        <div class="hd" style="border-bottom: 1px solid #F4F0EA;">
+                            <img src=${item2.img} alt="" class="img">
+                            <img src=${item2.imgs} alt="" class="imgs">
+                            <img src="../img/slogo.png" alt="" class="slogo">
+                            <div class="prom" style="background: url(../img/d03b.png);">
+                                <div class="promTitle" style="background: url(../img/879ed.png);">
+                                    <div class="nle">
+                                        <div class="uptitle">
+                                                ${item2.titles}
+                                        </div>
+                                        <div class="subtitle">
+                                                ${item2.txt}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nri">
+                                    <div class="Ncontent">
+                                            ${item2.title}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bd">
+                            <div class="prdtTags">
+                                <span class="tagword">${item2.center}</span>
+                            </div>
+                            <h4>${item2.head}</h4>
+                            <p class="nprice">
+                                <span class="red">${item2.price}</span>
+                                <span class="gray">${item2.change}</span>
+                            </p>
+                            <div class="detail">
+                                <hr>
+                                <p class="pDtl">${item2.foot}</p>
+                            </div>
+                        </div>
+                      </div>
+                    `).appendTo($(".Lbd")[i])
+                    if (item2.title == "") {
+                        $(".prom").last().css("display", "none")
+                    }
+                    $('main').delegate('.pOne', 'mouseover', function () {
+                        $(this).find(".imgs").css("display", "block")
+                        $(this).find(".img").css("display", "none")
+                    })
+                    $('main').delegate('.pOne', 'mouseout', function () {
+                        $(this).find(".imgs").css("display", "none")
+                        $(this).find(".img").css("display", "block")
+
+                    })
+
+                })
+            })
+        })
+        var swiper = new Swiper('.swiper', {
+            spaceBetween: 30,
+            effect: 'fade',
+            autoplay: {
+                delay: 2000,
+                stopOnLastSlide: false,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    })
+</script>
+
+</html>

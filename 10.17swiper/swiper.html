@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./swiper-5.0.4/package/css/swiper.min.css">
+    <title>Document</title>
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            margin: 100px auto;
+            width: 600px;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-container {
+            --swiper-theme-color: #ff6600;
+            /* 设置Swiper风格 */
+            --swiper-navigation-color: #00ff33;
+            /* 单独设置按钮颜色 */
+            --swiper-navigation-size: 30px;
+            /* 设置按钮大小 */
+            --swiper-theme-color: #ff6600;
+            --swiper-pagination-color: #00ff33;
+            /* 两种都可以 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Swiper1 -->
+    <div class="swiper-container swiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+        <div class="swiper-button-prev"></div>
+        <!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+        <div class="swiper-button-next"></div>
+        <!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
+    </div>
+
+
+    <!-- Swiper2 -->
+    <div class="swiper-container swiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
+        </div>
+
+    </div>
+
+    <script src="./swiper-5.0.4/package/js/swiper.min.js"></script>
+
+    <script>
+        var swiper1 = new Swiper('.swiper1', {
+            autoplay: {
+                delay: 2000
+            },
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            observer:true,
+            observeParents:true,
+        });
+
+
+
+
+        var swiper2 = new Swiper('.swiper2');
+    </script>
+</body>
+
+</html>
